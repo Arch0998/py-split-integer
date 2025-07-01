@@ -8,6 +8,7 @@ def test_sum_of_the_parts_should_be_equal_to_value() -> None:
     sum_of_parts = sum(parts)
     assert value == sum_of_parts
 
+
 def test_should_split_into_equal_parts_when_value_divisible_by_parts() -> None:
     value = 10
     number_of_parts = 2
@@ -18,27 +19,26 @@ def test_should_split_into_equal_parts_when_value_divisible_by_parts() -> None:
     assert parts[0] == expected_part
 
 
-
 def test_should_return_part_equals_to_value_when_split_into_one_part() -> None:
-    value = 8 
-    number_of_parts = 1 
+    value = 8
+    number_of_parts = 1
     parts = split_integer(value, number_of_parts)
-    assert len(parts) == 1 
+    assert len(parts) == 1
     assert parts[0] == value
 
 
 def test_parts_should_be_sorted_when_they_are_not_equal() -> None:
-    value = 17 
-    number_of_parts = 4  
+    value = 17
+    number_of_parts = 4
     parts = split_integer(value, number_of_parts)
-    copy_parts = parts.copy() 
+    copy_parts = parts.copy()
     copy_parts.sort()
     assert parts == copy_parts
 
 
 def test_should_add_zeros_when_value_is_less_than_number_of_parts() -> None:
-    value = 3 
-    number_of_parts = 5   
+    value = 3
+    number_of_parts = 5
     parts = split_integer(value, number_of_parts)
     assert len(parts) == number_of_parts
     assert 0 in parts
